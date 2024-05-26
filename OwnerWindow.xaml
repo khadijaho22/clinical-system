@@ -1,0 +1,108 @@
+﻿<Window x:Class="Clinic_FrontEnd.OwnerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:Clinic_FrontEnd"
+        mc:Ignorable="d"
+        Title="OwnerWindow" Height="850" Width="1500" WindowState="Maximized">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel VerticalAlignment="Top" Margin="1135,0,0,0" Height="57" Grid.Column="1">
+
+            <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1283A8">
+                <StackPanel Margin="-5">
+                    <materialDesign:PackIcon Kind="Settings" />
+                </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Margin="0,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black">
+                <StackPanel Margin="-5">
+                    <materialDesign:PackIcon Kind="BellOutline" Foreground="#FFFF7575" />
+                </StackPanel>
+            </Button>
+            <TextBlock  Text="{Binding ownerName}" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" />
+            <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black">
+                <StackPanel Margin="-5">
+                    <materialDesign:PackIcon Kind="UserOutline" />
+                </StackPanel>
+            </Button>
+        </WrapPanel>
+
+
+        <Image Source="/Images/Logo.jpeg" Stretch="Fill" VerticalAlignment="Top" Height="90" Margin="0,-10,0,0" />
+        <ListBox Grid.Column="0" SelectionMode="Single" Margin="0,60,0,0"  BorderThickness="0">
+
+            <Button Margin="10" Click="Open_Profile" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="User" Foreground="#29A3EC" Height="25" Width="25" />
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Profile" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_ODashboard" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="ViewDashboard" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Dashboard" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_Analysis" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="Analytics" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Analysis" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_BillingSystem" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="CurrencyUsd" Foreground="#29A3EC" Height="25" Width="25" />
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Billing System" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_Salary" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="Sack" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Salary" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_AddUser" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="AccountAdd" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Add User" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_Attentance" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="UserGroup" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Attendance" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+            <Button Margin="10" Click="Open_Chat" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="Chat" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Chat" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+
+            <Button Margin="10" Click="btnExit_Click" Padding="8" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Height="40" Width="40">
+                <materialDesign:PackIcon Kind="ExitToApp" Foreground="#29A3EC" Height="25" Width="25"/>
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="Exit" Placement="Right" Background="#29A3EC" HorizontalOffset="10"/>
+                </ToolTipService.ToolTip>
+            </Button>
+
+        </ListBox>
+
+        <Frame Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="#e9ecef" Margin="0,60,0,0"/>
+
+
+    </Grid>
+</Window> 
